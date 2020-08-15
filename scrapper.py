@@ -20,7 +20,8 @@ def make_poems_db():
         title = all[0].text
         print(title)
         poem  = '\n\n'.join([i.get_text().replace('\r', '') for i in all[1:]])
-        with open(f'DB/{link}', 'w') as f:
+        name = link.split('.')[0] # remove the htm extension
+        with open(f'DB/{name}.txt', 'w') as f:
             f.write(title + '\n')
             f.write(poem)
 
